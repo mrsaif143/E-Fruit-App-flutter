@@ -1,6 +1,9 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+import 'SignupScreeb.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -110,26 +113,31 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(fontSize: 25, color: Colors.white),
                       )),
                 ),
-                const Row(
+                Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 80,
                     ),
-                    Text(
+                    const Text(
                       'Dont have an Account',
                       style: TextStyle(
                           fontSize: 18, fontWeight: FontWeight.normal),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
-                    Text(
-                      'Sign Up',
-                      style: TextStyle(
-                          fontSize: 20,
-                          color: const Color(0xFFF1C40F),
-                          fontWeight: FontWeight.bold),
-                    )
+                    GestureDetector(
+                      onTap: () {
+                        Get.to(const SignupScreen());
+                      },
+                      child: const Text(
+                        'Sign Up',
+                        style: TextStyle(
+                            fontSize: 20,
+                            color: Color(0xFFF1C40F),
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
                   ],
                 )
               ],
